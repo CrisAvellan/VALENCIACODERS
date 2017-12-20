@@ -6,7 +6,7 @@ Comentario de bloque
 console.log("hola mundo");
 console.log("Hola mundo".length); //cuenta espacios
 */
-
+/*
 // constante: Elemento que no se puede cambiar
 const pi=3.1416182432;
 console.log(pi);
@@ -89,9 +89,33 @@ console.log(edad);
 var nombre=prompt("Introduce tu nombre")
 var year=prompt("Introduce el año de nacimiento");
 const actual=2017;
-console.log('Hola, ' + nombre + '. Naciste en el año '+ year + ' y por tanto tienes ' + (actual-year) + ' años.');
+var edad= actual-year;
+console.log('Hola, ' + nombre + '. Naciste en el año '+ year + ' y por tanto tienes ' + edad + ' años.');
+
+const joven="joven";
+const viejoven="viejoven";
+const viejo="viejo";
+if(edad>=16 && edad<=25){var res=1;} //joven
+if(edad>=26 && edad<=35){var res=2;} //viejoven
+if(edad>=36){var res=3;} //viejo
+switch(edad){
+  case 1:
+    alert(joven);
+    break;
+  case 2:
+    alert(viejoven);
+    break;
+
+  case 3:
+    alert(viejo);
+    break;
+  default:
+  alert("estas muy muerto");
+  break;
+  }
 
 
+/*
 // tenemos operaciones de la libreria Math
 console.log(Math.random()); //num aleatorio entre 0 y 1
 console.log(Math.floor(Math.random()*10)+1); //floor redondea
@@ -117,7 +141,7 @@ Jugador: piedra, random: tijera -- ganas
 Jugador: tijera, random: piedra --pierdes
 Jugador: papel, random: tijera -- pierdes
 jugador: tijera, random: papel --ganas
-*/
+
 if( jugador==random){
   console.log(jugador);
   console.log(random);
@@ -154,4 +178,48 @@ if( jugador==random){
       console.log("random: tijera");
       console.log("has perdido");
       alert("has perdido");}
+}
+
+/* Con switch:
+jugadaJ1= jugar();
+jugadaJ2=jugar();
+ganador=obtenerganador();
+
+mostrarresultado();
+function jugar(){
+  let res=Math
+  switch(res){
+    case 1: return PIEDRA; break;
+    case 2: return PAPEL; break;
+    caso 3: return TIJERA; break;
+  }
+}
+faltaría código
+*/
+
+// Vamos a crear una calculadora a través de funciones
+let op= prompt("Sumar +, restar -, multiplicar *, dividir /");
+let n1= parseInt(prompt("introduce el primer numero")); //el prompt nos devuelve un string, lo convertimos a numero
+let n2= parseInt(prompt("introduce el segundo numero"));
+
+switch(op){ //opcion va a ser un string
+  case '+':  alert(sumar(n1,n2)); break;
+  case '-':  alert(restar(n1,n2)); break;
+  case '*':  alert(multiplicar(n1,n2)); break;
+  case '/':  alert(dividir(n1,n2)); break;
+  default:   alert("utilizar otra operacion"); break;
+}
+console.log(op);
+
+function multiplicar (p1,p2) {
+  return p1*p2;
+}
+function sumar(p1,p2){
+  return (p1+p2);
+}
+function restar(p1,p2){
+  return (p1-p2);
+}
+function dividir(p1,p2){
+  return (p1/p2);
 }
